@@ -62,14 +62,26 @@ a:hover {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #e74c3c;
+  background-color: #bdc3c7;
   color: white;
+  -o-transition:color .5s ease-out, background .5s ease-in;
+-ms-transition:color .5s ease-out, background .5s ease-in;
+-moz-transition:color .5s ease-out, background .5s ease-in;
+-webkit-transition:color .5s ease-out, background .5s ease-in;
+
+transition:color .5s ease-out, background .5s ease-in;
 }
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
+  color: #999;
+  background-color: #ecf0f1;
+}
+.navbar-nav > .action > a,
+.navbar-nav > .action > a:hover,
+.navbar-nav > .action > a:focus {
   color: #fff;
-  background-color: #e74c3c;
+  background-color: #e67e22;
 }
 
 .navbar {
