@@ -15,3 +15,24 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+$(document.body).ready(function(){
+
+
+ //    $("div.test").textAnimation({
+	// 	mode: "highlight",
+	// 	baseColor: "#ffffff",
+	// 	highlightColor: "#2ecc71",
+	// 	delay: 35,
+	// 	interval: 0,
+	// 	duration: 5000
+	// });    
+
+   var loopImages = function(){
+
+         $('#arrow').fadeIn(1500, function(){
+
+                   $('#arrow').fadeOut(1500, loopImages);           
+         });
+    }
+    loopImages();
+});

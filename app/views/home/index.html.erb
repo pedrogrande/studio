@@ -1,4 +1,33 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+
+<div class="container">
+	<div class="row">
+		
+		<div class="span4 offset8 pull-right panel">
+
+			
+			<%= link_to root_path do %>
+			  <%= image_tag 'studio6.png', :class => "pull-right" %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6 offset6">
+			<div class="test slogan">
+				<h2>Train with</h2>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span4 offset8 test slogan">
+			<h2 style="font-style: italic;">purpose</h2>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="span1 offset11">
+			<div id="arrow">
+				<a href="#"><i class="icon-circle-arrow-down icon-3x"></i></a>
+			</div>
+ 
+		</div>
+	</div>
