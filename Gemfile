@@ -20,3 +20,4 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'quiet_assets'
 end
+gem 'rails_12factor'

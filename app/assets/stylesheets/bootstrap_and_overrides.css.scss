@@ -6,7 +6,7 @@ body {
 	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 100;
 	color: white;
-	font-size: 30px;
+	font-size: 18pt;
 	line-height: 42px;
 	 }
 
@@ -47,7 +47,6 @@ html {
 	padding-top: 10px;
 	line-height: 0.7em;
 	font-weight: 100;
-	text-align: right;
 	//font-style: italic;
 }
 .arrow {
@@ -59,5 +58,33 @@ a {
 a:hover {
 	color: white;
 	text-decoration: none;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e74c3c;
+  color: white;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+.navbar {
+	
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: transparent;
+  font-size: 24px;
+}
+.navbar-nav > li > a {
+	background-color: transparent;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #34495e;
+  border-radius: 0px;
 }
 @import "bootstrap-responsive";
