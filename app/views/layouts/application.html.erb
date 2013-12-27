@@ -13,7 +13,7 @@
   <style type="text/css">
 
           body{
-              background: #444;
+              background: #000;
               margin:0;
           }
 
@@ -42,7 +42,7 @@
               display:block;
               background:transparent;
               border:none;
-              color:white;
+              color:black;
               font-size:18px;
               cursor:pointer;
           }
@@ -83,7 +83,8 @@
               <%= yield %>
             </div>
          
-              <a id="bgndVideo" href="http://www.youtube.com/watch?v=Qdr0SsCm1Ao" class="movie {opacity:1, isBgndMovie:{width:'window',mute:false}, optimizeDisplay:true, showControls:true, loop: false, vol:20, quality:'highdef',addRaster:true, lightCrop:true}"></a>
+              <a id="bgndVideo" href="http://www.youtube.com/watch?v=Qdr0SsCm1Ao" class="movie {opacity:1, isBgndMovie:{width:'window',mute:true}, optimizeDisplay:true, showControls:false, loop: false, vol:20, quality:'highdef',addRaster:true, lightCrop:true}"></a>
+  <%= render 'layouts/footer' %>
   </div>
   </body>
 </html>
