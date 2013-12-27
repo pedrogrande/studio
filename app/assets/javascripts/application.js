@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require turbolinks
 //= require_tree .
-$(document.body).ready(function(){
 
+
+$(document.body).ready(function(){
+	
+    
 
  //    $("div.test").textAnimation({
 	// 	mode: "highlight",
