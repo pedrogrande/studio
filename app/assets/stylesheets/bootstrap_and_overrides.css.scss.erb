@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic);
 body { 
-	padding-top: 20px;
-	background-color: black;
+	/*padding-top: 0px;*/
+	background-color: transparent;
 	color: #555;
 	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 100;
@@ -11,20 +11,28 @@ body {
 	 }
 
 .panel h2 {
-	font-weight: 100;
-	color: white;
-	font-style: italic;
+	font-weight: 400;
+	color: rgba(255,255,255,0.7);
+	font-size: 2em;
 
 }
+.panel h3 {
+	font-weight: 400;
+	color: #B50937;
+	font-size: 1.5em;
+}
 .logo {
-	height: 300px;
+	height: 100px;
+	margin-top: 10px;
 }
 .panel {
 	background-color: rgba(255,0,0,0.8);
-	margin-top: 50px;
+	margin-top: 0px;
 	margin-bottom: 50px;
 }
-
+/*.blog {
+	background-image: url(<%= asset_path 'blog.jpg' %>) no-repeat;
+}*/
 .slogan h2 {
 	color: rgba(255,255,255,0.5);
 }
@@ -51,6 +59,7 @@ box-shadow: 0 0 10px rgba(0,0,0,.5);
 h1 {
 	color: rgba(255,255,255,0.3);
 	font-size: 72pt;
+	line-height: 72pt;
 	
 }
 .panel {
@@ -118,19 +127,19 @@ transition:color .5s ease-out, background .5s ease-in;
   font-size: 20px;
 }
 .navbar-nav > li > a {
-	background-color: transparent;
+  background-color: transparent;
   padding-top: 15px;
   padding-bottom: 15px;
   line-height: 20px;
-  color: #34495e;
+  color: #B50937;
   border-radius: 0px;
 }
 .navbar .nav > li > a {
   float: none;
   padding: 15px 9px 15px;
-  color: #ffffff;
+  color: #B50937;
   text-decoration: none;
-  text-shadow: 0 1px 0 #080808;
+  text-shadow: none;
 }
 @import "bootstrap-responsive";
 button {
@@ -139,4 +148,25 @@ button {
     background-image: url("<%= asset_path '2.png' %>");
     border: 0;
     background-repeat: no-repeat;
+}
+.navbar-inner {
+  min-height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff080808', endColorstr='#ff080808', GradientType=0);
+  border: 1px solid transparent;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  *zoom: 1;
+}
+
+.tiny {
+	font-size: 0.5em;
 }
