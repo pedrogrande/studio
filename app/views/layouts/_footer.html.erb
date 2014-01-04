@@ -6,12 +6,12 @@
 
           
             <ul class="nav navbar-nav">
-              <li class="active"><a id="title" href="/"><i class="icon-home"></i></a></li>
-              <li><%= link_to "Personal Training", personal_training_path %></a></li>
-              <li><%= link_to "Group Fitness", group_fitness_path %></li>
-              <li><%= link_to "Blog", blog_path %></li>
-              <li><%= link_to "Contact", contact_path %></li>
-              <li><%= link_to "About", about_path %></li>
+              <li class="<%= 'active' if current_page?(root_path) %>"><a id="title" href="/"><i class="icon-home"></i></a></li>
+              <li class="<%= 'active' if current_page?(personal_training_path) %>"><%= link_to "Personal Training", personal_training_path %></a></li>
+              <li class="<%= 'active' if current_page?(group_fitness_path) %>"><%= link_to "Group Fitness", group_fitness_path %></li>
+              <li class="<%= 'active' if current_page?(blog_path) %>"><%= link_to "Blog", blog_path %></li>
+              <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+              <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
               
               <li class="tiny"><a href="#" data-toggle="tooltip" title="© Studio Evolution Fitness"> &copy 2013</a></li>
               <li class="tiny"><a href="http://thecoderfactory.com" target="_blank" data-toggle="tooltip" title="Created by The Coder Factory"> The Coder Factory</a></li>

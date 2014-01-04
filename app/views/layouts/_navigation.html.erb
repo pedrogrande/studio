@@ -2,7 +2,11 @@
   <nav class="navbar-inner">
     <div class="container-fluid">
         <%= link_to root_path, class: 'brand' do %>
-        <%= image_tag 'studio6.png', class: 'logo' %>
+        <% if controller_name != 'home' %>
+          <%= image_tag 'studio6.png', class: 'logo' %>
+        <% else %>
+          <%= image_tag 'studio6.png', class: 'home-logo' %>
+        <% end %>
       <% end %>
       <ul class="nav">
       <li><a href="#">&nbsp;<i class="icon-facebook"></i></a></li>

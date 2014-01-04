@@ -25,6 +25,10 @@ body {
 	height: 100px;
 	margin-top: 10px;
 }
+.home-logo {
+	height: 150px;
+	margin-top: 10px;
+}
 .panel {
 	background-color: rgba(255,0,0,0.8);
 	margin-top: 0px;
@@ -88,7 +92,12 @@ h1 {
 	text-align: right;
 }
 a {
-	color: #2ecc71;
+	color: #999;
+	text-decoration: none;
+	font-weight: 400;
+}
+.red {
+	color: #B50937;
 }
 a:hover {
 	color: white;
@@ -106,18 +115,7 @@ a:hover {
 
 transition:color .5s ease-out, background .5s ease-in;
 }
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,
-.navbar-nav > .active > a:focus {
-  color: #999;
-  background-color: #ecf0f1;
-}
-.navbar-nav > .action > a,
-.navbar-nav > .action > a:hover,
-.navbar-nav > .action > a:focus {
-  color: #fff;
-  background-color: #e67e22;
-}
+
 
 .navbar {
 	
@@ -131,15 +129,25 @@ transition:color .5s ease-out, background .5s ease-in;
   padding-top: 15px;
   padding-bottom: 15px;
   line-height: 20px;
-  color: #B50937;
+  color: #FFFFFF;
   border-radius: 0px;
 }
 .navbar .nav > li > a {
   float: none;
   padding: 15px 9px 15px;
-  color: #B50937;
+  color: #FFF;
   text-decoration: none;
   text-shadow: none;
+  font-weight: 300;
+
+}
+.navbar .nav > li > a:hover,
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  	color: #B50937;
+	font-weight: 300;
+	background-color: rgba(50,50,50,0.2);
 }
 @import "bootstrap-responsive";
 button {
