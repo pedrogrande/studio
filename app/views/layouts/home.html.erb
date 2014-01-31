@@ -60,18 +60,20 @@
 
               jQuery(function(){
 
-                  jQuery("button").not(".command").click(function(){
-                      jQuery("button").not(".command").removeClass("sel");
-                      jQuery(this).addClass("sel");
+                  var videos = [
+                      {videoURL:"xip3YjSTZlU",containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, loop:false, ratio:"4/3", addRaster:true, quality:"large"},
+                      {videoURL: "3ovA7zeviRo",containment:'body',autoPlay:true, mute:true, startAt:10, stopAt:0, opacity:1, loop:false, ratio:"4/3", addRaster:false, quality:"large"},
+                      {videoURL: "u9k1FaMIYTs",containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, loop:false, ratio:"4/3", addRaster:true, quality:"large"}
+                  ];
+
+                  jQuery("#bgndVideo").YTPlaylist(videos, false, function(video){
+                      if(video.videoData){
+                          jQuery("#videoID").html(video.videoData.id);
+                          jQuery("#videoTitle").html(video.videoData.title);
+                          jQuery("#videoDuration").html(jQuery.mbYTPlayer.formatTime(video.videoData.duration));
+                          jQuery("#viewCount").html(video.videoData.viewCount);
+                      }
                   });
-
-                  //debug functions
-                  jQuery("#bgndVideo").on("YTPStart", function(){ jQuery("#eventListener").html("YTPStart")});
-                  jQuery("#bgndVideo").on("YTPEnd", function(){ jQuery("#eventListener").html("YTPEnd")});
-                  jQuery("#bgndVideo").on("YTPPause", function(){ jQuery("#eventListener").html("YTPPause")});
-                  jQuery("#bgndVideo").on("YTPBuffering", function(){ jQuery("#eventListener").html("YTPBuffering")});
-
-                  jQuery("#bgndVideo").mb_YTPlayer();
 
               });
 
@@ -83,7 +85,8 @@
     <%= render 'layouts/navigation' %>
               <%= yield %>
             </div>
-              <a id="bgndVideo" href="http://www.youtube.com/watch?v=Qdr0SsCm1Ao" class="movie {opacity:1, isBgndMovie:{width:'window',mute:true}, optimizeDisplay:true, showControls:false, loop:false, vol:20, quality:'highdef',addRaster:true, lightCrop:true}"></a>
+              <a class="player" id="bgndVideo" ></a>
+              
   <%= render 'layouts/footer' %>
   </div>
   </body>
