@@ -2826,7 +2826,7 @@ input[type="button"].btn-block {
 .btn-danger {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #f50f43;
+  background-color: #B50937;
   background-image: -moz-linear-gradient(top, #ff1a4d, #e60033);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff1a4d), to(#e60033));
   background-image: -webkit-linear-gradient(top, #ff1a4d, #e60033);

@@ -1,4 +1,5 @@
 Studio::Application.routes.draw do
+  resources :posts
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
@@ -7,4 +8,5 @@ Studio::Application.routes.draw do
   get "personal_training" => "personal_training#index"
   get "about" => 'about#index'
   get "blog" => 'blog#index'
+  get "admin" => 'admin#index'
 end

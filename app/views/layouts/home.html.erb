@@ -6,7 +6,7 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Studio" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     
-    <%= javascript_include_tag "application" %>
+    
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
     
@@ -15,19 +15,12 @@
           body{
               background: #000;
               margin:0;
+              padding-top: 200px;
           }
 
-         /* #content{
-              color:white;
-              font:40px/40px Calibri;
-              text-align:left;
-              padding-top:200px;
-              text-shadow:#666666 2px 2px 4px;
-              margin-left:100px;
-          }*/
-
+          
           .movie{
-              display:none;
+              display:block;
           }
 
           .dida{
@@ -42,7 +35,7 @@
               display:block;
               background:transparent;
               border:none;
-              color:black;
+              color:#FFF;
               font-size:18px;
               cursor:pointer;
           }
@@ -52,42 +45,66 @@
           }
 
           button:hover, button.sel{
-              color: #ffcc00;
+              color: #B50937;
           }
 
       </style>
-      <script type="text/javascript">
+   <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
 
-              jQuery(function(){
+        jQuery(function(){
+            
+            jQuery("button").not(".command").click(function(){
+                jQuery("button").not(".command").removeClass("sel");
+                jQuery(this).addClass("sel");
+            });
 
-                  var videos = [
-                      {videoURL:"xip3YjSTZlU",containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, loop:false, ratio:"4/3", addRaster:true, quality:"large"},
-                      {videoURL: "3ovA7zeviRo",containment:'body',autoPlay:true, mute:true, startAt:10, stopAt:0, opacity:1, loop:false, ratio:"4/3", addRaster:false, quality:"large"},
-                      {videoURL: "u9k1FaMIYTs",containment:'body',autoPlay:true, mute:false, startAt:0, opacity:1, loop:false, ratio:"4/3", addRaster:true, quality:"large"}
-                  ];
+            //debug functions
+            jQuery("#bgndVideo").on("YTPStart", function(){ jQuery("#eventListener").html("YTPStart")});
+            jQuery("#bgndVideo").on("YTPEnd", function(){ jQuery("#eventListener").html("YTPEnd")});
+            jQuery("#bgndVideo").on("YTPPause", function(){ jQuery("#eventListener").html("YTPPause")});
+            jQuery("#bgndVideo").on("YTPBuffering", function(){ jQuery("#eventListener").html("YTPBuffering")});
 
-                  jQuery("#bgndVideo").YTPlaylist(videos, false, function(video){
-                      if(video.videoData){
-                          jQuery("#videoID").html(video.videoData.id);
-                          jQuery("#videoTitle").html(video.videoData.title);
-                          jQuery("#videoDuration").html(jQuery.mbYTPlayer.formatTime(video.videoData.duration));
-                          jQuery("#viewCount").html(video.videoData.viewCount);
-                      }
-                  });
+            jQuery("#bgndVideo").mb_YTPlayer();
 
-              });
+        });
 
-          </script>
+    </script>
+    
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-  <div id="content">
+  <div id="wrapper">
     <div class="console">
     <%= render 'layouts/navigation' %>
-              <%= yield %>
-            </div>
-              <a class="player" id="bgndVideo" ></a>
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="col-md-12">
+        
+        <br><br>
+        <small>
+            <a href="#" class="command" onclick="jQuery('#bgndVideo').getPlayer().playVideo()"> <i class="icon-play"></i> </a>
+                <a href="#" class="command" onclick="jQuery('#bgndVideo').getPlayer().pauseVideo()"> <i class="icon-pause"></i> </a>
+                <a href="#" class="command" onclick="jQuery('#bgndVideo').toggleVolume()"><i class="icon-volume-up"></i> </a><br>
+                
+                </small>
+        <button class="sel" onclick="jQuery('#bgndVideo').changeMovie({videoURL:'http://www.youtube.com/watch?v=FjD28_D6YWc'})">  balance   </button>
+            <button onclick="jQuery('#bgndVideo').changeMovie({videoURL:'https://www.youtube.com/watch?v=t5dXnqtWcbU'})"> vitality </button>
+            <button onclick="jQuery('#bgndVideo').changeMovie({videoURL:'J4fP9D0or7M'})"> my time </button>
+            <button onclick="jQuery('#bgndVideo').changeMovie({videoURL:'9JNhJ8_LSKk'})"> confidence  </button>
+            <button onclick="jQuery('#bgndVideo').changeMovie({videoURL:'NkSGwb6lCTM'})"> health </button>
+            <button onclick="jQuery('#bgndVideo').changeMovie({videoURL:'izjH5VAR_m0'})"> strength </button>
+            <button onclick="jQuery('#bgndVideo').changeMovie({videoURL:'_VLBWKsJk5k'})"> staying in shape  </button>
+            <br>
+            
+    </div>
+
+    <a id="bgndVideo" href="http://www.youtube.com/watch?v=FjD28_D6YWc" class="movie {opacity:.8, isBgndMovie:{width:'window',mute:false}, optimizeDisplay:true, showControls:false, loop: false, quality:'highres',addRaster:true, lightCrop:true}"> </a>
+</div></div></div>
+  
+</div>
+<div class="dida"></div>
+             
+<%= render 'layouts/footer' %>
               
-  <%= render 'layouts/footer' %>
-  </div>
   </body>
 </html>

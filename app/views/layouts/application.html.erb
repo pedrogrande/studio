@@ -27,7 +27,7 @@
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'layouts/navigation' %>
     <div class="row-fluid">
-      <div class="span6 offset6">
+      <div class="span6 offset5">
         <div class="panel">
             <%= yield %>
         </div>
@@ -35,5 +35,15 @@
     </div>
     <%= render 'layouts/footer' %>
   </div>
+  <script>
+  $(document).ready(function() {
+    $('.ckeditor').ckeditor({
+      // optional config
+      config.toolbar = [
+        [ 'Source', '-', 'Bold', 'Italic' ]
+      ];
+    });
+  });
+  </script>
   </body>
 </html>

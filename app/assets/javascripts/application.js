@@ -12,10 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.mb.YTPlayer.js
+//= require ckeditor-jquery
 
 
-$(document.body).ready(function(){
+
+// $(document.body).ready(function(){
 	
     
 
@@ -28,12 +30,12 @@ $(document.body).ready(function(){
 	// 	duration: 5000
 	// });    
 
-   var loopImages = function(){
+//    var loopImages = function(){
 
-         $('#arrow').fadeIn(1500, function(){
+//          $('#arrow').fadeIn(1500, function(){
 
-                   $('#arrow').fadeOut(1500, loopImages);           
-         });
-    }
-    loopImages();
-});
+//                    $('#arrow').fadeOut(1500, loopImages);           
+//          });
+//     }
+//     loopImages();
+// });

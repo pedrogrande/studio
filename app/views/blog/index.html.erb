@@ -1,2 +1,10 @@
-<h1>Evolution Blog</h1>
+<h1>Articles</h1>
 <br>
+<% @posts.each do |post| %>
+	<h2><%= link_to post.title, post, class: 'post-title' %></h2>
+	<h3><small>By <span class="author"><%= post.author %></span> Published on: <span class="author"><%= post.created_at.strftime('%e %h %Y') %></span></small></h3>
+	<div class="post-content">
+		<%= truncate_html(post.content.html_safe, length: 200) %><%= link_to 'Read more', post, class: 'btn btn-danger' %>
+	</div>
+<br>
+<% end %>
