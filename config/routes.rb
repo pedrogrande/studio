@@ -1,4 +1,5 @@
 Studio::Application.routes.draw do
+  get "studio_training_sessions" => "studio_training_sessions#index"
   resources :posts
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}
