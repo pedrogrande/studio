@@ -2,12 +2,17 @@
   <nav class="navbar-inner">
     <div class="container-fluid">
         <%= link_to root_path, class: 'brand' do %>
-        <% if controller_name != 'home' %>
-          <%= image_tag 'StudioEF.png', class: 'logo' %>
-        <% else %>
-          <%= image_tag 'StudioEF.png', class: 'home-logo' %>
+            <% if controller_name != 'home' %>
+              <%= image_tag 'StudioEF.png', class: 'logo' %>
+            <% else %>
+              <%= image_tag 'StudioEF.png', class: 'home-logo' %>
+            <% end %>
         <% end %>
-      <% end %>
+        <!-- <form class="navbar-form pull-right">
+          <input type="text" class="span2" placeholder="Enter your email">
+          <button type="submit" class="btn btn-danger">Enquire now</button>
+        </form> -->
+        <%= link_to 'START your evolution now', contact_path, class: 'btn btn-danger pull-right' %>
     </div>
   </nav>
 </div>
