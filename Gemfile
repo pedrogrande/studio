@@ -20,6 +20,6 @@ gem 'truncate_html'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
 end
 gem 'rails_12factor'
