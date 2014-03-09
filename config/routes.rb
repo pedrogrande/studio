@@ -1,4 +1,6 @@
 Studio::Application.routes.draw do
+  resources :enquiries
+
   get "studio_training_sessions" => "studio_training_sessions#index"
   resources :posts
   root :to => "home#index"

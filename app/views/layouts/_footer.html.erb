@@ -1,7 +1,7 @@
 
 
       <!-- Static navbar -->
-      <div class="navbar navbar-fixed-bottom">
+      <div class="navbar navbar-fixed-bottom navbar-bottom">
         <div class="container-fluid"><div class="row-fluid">
 
           
@@ -16,6 +16,7 @@
               <% end %>
               <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact Us", contact_path %></li>
               </ul>
+              <%= link_to 'START your evolution now', new_enquiry_path, class: 'btn btn-danger navbar-btn' %>
               <ul class="nav navbar-nav pull-right">
               <li class="tiny"><a href="#" data-toggle="tooltip" title="© Studio Evolution Fitness"> &copy 2013</a></li>
               <li class="tiny"><a href="http://thecoderfactory.com" target="_blank" data-toggle="tooltip" title="Created by The Coder Factory"> The Coder Factory</a></li>
