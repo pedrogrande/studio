@@ -1,0 +1,40 @@
+
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-fixed-top navbar-bottom">
+        <div class="container-fluid"><div class="row-fluid">
+
+          
+            <ul class="nav navbar-nav">
+              <li class="<%= 'active' if current_page?(root_path) %>"><a id="title" href="/"><i class="icon-home"></i></a></li>
+              <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "Our Story", about_path %></li>
+              <li class="<%= 'active' if current_page?(personal_training_path) %>"><%= link_to "My Evolution", personal_training_path %></a></li>
+              <li class="<%= 'active' if current_page?(studio_training_sessions_path) %>"><%= link_to "The Sessions", studio_training_sessions_path %></a></li>
+              <li class="<%= 'active' if current_page?(group_fitness_path) %>"><%= link_to "Group Training", group_fitness_path %></li>
+              <% if Post.count > 0 %>
+              <li class="<%= 'active' if current_page?(blog_path) %>"><%= link_to "Our Words", blog_path %></li>
+              <% end %>
+              <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact Us", contact_path %></li>
+              </ul>
+              <%= link_to 'START your evolution now', new_enquiry_path, class: 'btn btn-danger navbar-btn' %>
+              <ul class="nav navbar-nav pull-right">
+              <li class="tiny"><a href="#" data-toggle="tooltip" title="© Studio Evolution Fitness"> &copy 2013</a></li>
+              <li class="tiny"><a href="http://thecoderfactory.com" target="_blank" data-toggle="tooltip" title="Created by The Coder Factory"> The Coder Factory</a></li>
+              
+              
+            </ul>
+
+      </div></div></div>
+      <!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f03e0f2004e66c"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'right',
+      'numPreferredServices' : 4
+    }   
+  });
+</script>
+<!-- AddThis Smart Layers END -->
